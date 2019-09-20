@@ -45,11 +45,12 @@ ABAddressBookRef _addressBook;
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     
-    self.bluetoothManager = [[CBCentralManager alloc]
+   /* FIXME: Disabled to new ios 13 privacy policy
+     self.bluetoothManager = [[CBCentralManager alloc]
                              initWithDelegate:self
                              queue:dispatch_get_main_queue()
                              options:@{CBCentralManagerOptionShowPowerAlertKey: @(NO)}];
-    [self centralManagerDidUpdateState:self.bluetoothManager]; // Show initial state
+    [self centralManagerDidUpdateState:self.bluetoothManager]; */
     self.contactStore = [[CNContactStore alloc] init];
     self.motionManager = [[CMMotionActivityManager alloc] init];
     self.motionActivityQueue = [[NSOperationQueue alloc] init];
